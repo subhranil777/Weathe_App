@@ -54,6 +54,7 @@ function fetchData(){
 }
 
 function weatherDetails(info){
+    console.log(info);
     if(info.cod == "404"){
         infoTxt.classList.replace("pending", "error");
         infoTxt.innerText = `${inputField.value} isn't a valid city name`;
@@ -65,6 +66,7 @@ function weatherDetails(info){
 
         if(id == 800){
             wIcon.src = "icons/clear.svg";
+            document.body.style.backgroundImage="url('img/clear.jpg')"
         }else if(id >= 200 && id <= 232){
             wIcon.src = "icons/storm.svg";  
             document.body.style.backgroundImage= "url('img/storm.jpg')";
